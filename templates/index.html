@@ -27,15 +27,29 @@
 <p><strong>Confidence:</strong> {{ confidence }}%</p>
 
 {% if info %}
-<h3>Crop Information</h3>
-<p><strong>Description:</strong> {{ info.description }}</p>
+<h3>🌾 Crop Information</h3>
+
 <p><strong>Season:</strong> {{ info.season }}</p>
+
+<p><strong>Temperature:</strong> {{ info.temperature }}</p>
+
+<p><strong>Water Requirement:</strong> {{ info.water }}</p>
+
+<p><strong>Soil Type:</strong> {{ info.soil }}</p>
+
+<p><strong>Soil pH:</strong> {{ info.ph }}</p>
+
+<p><strong>Benefits:</strong> {{ info.benefits }}</p>
 {% endif %}
 
 {% if fertilizer %}
-<h3>Fertilizer Recommendation</h3>
-<p><strong>Name:</strong> {{ fertilizer.name }}</p>
-<p><strong>Usage:</strong> {{ fertilizer.usage }}</p>
+<h3>🌿 Fertilizer Recommendation</h3>
+
+<p><strong>Fertilizer:</strong> {{ fertilizer.fertilizer }}</p>
+
+<p><strong>Application:</strong> {{ fertilizer.application }}</p>
+
+<p><strong>Benefit:</strong> {{ fertilizer.benefit }}</p>
 {% endif %}
 
 {% if reasons %}

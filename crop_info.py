@@ -7,6 +7,7 @@ crop_details = {
         "ph": "5.5–7.0",
         "benefits": "High yield, good market demand"
     },
+    
 
     "maize": {
         "season": "Kharif/Rabi",
