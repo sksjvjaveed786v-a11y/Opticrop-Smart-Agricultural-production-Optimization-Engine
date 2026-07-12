@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prediction Result</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Prediction Result</h1>
+<h2>{{ prediction }}</h2>
+<p>Confidence: {{ confidence }}%</p>
+<a href="/">← Back to Home</a>
+</div>
+</body>
+</html>

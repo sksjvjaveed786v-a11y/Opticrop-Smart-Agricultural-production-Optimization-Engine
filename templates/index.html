@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OptiCrop AI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>🌱 OptiCrop AI</h1>
+<h3>Smart Agricultural Production Optimization Engine</h3>
+
+<form action="/predict" method="POST">
+<input type="number" step="any" name="N" placeholder="Nitrogen (N)" required>
+<input type="number" step="any" name="P" placeholder="Phosphorus (P)" required>
+<input type="number" step="any" name="K" placeholder="Potassium (K)" required>
+<input type="number" step="any" name="temperature" placeholder="Temperature (°C)" required>
+<input type="number" step="any" name="humidity" placeholder="Humidity (%)" required>
+<input type="number" step="any" name="ph" placeholder="Soil pH" required>
+<input type="number" step="any" name="rainfall" placeholder="Rainfall (mm)" required>
+<button type="submit">Predict Crop</button>
+</form>
+
+{% if prediction %}
+<hr>
+<h2>Recommended Crop: {{ prediction }}</h2>
+<p><strong>Confidence:</strong> {{ confidence }}%</p>
+
+{% if info %}
+<h3>Crop Information</h3>
+<p><strong>Description:</strong> {{ info.description }}</p>
+<p><strong>Season:</strong> {{ info.season }}</p>
+{% endif %}
+
+{% if fertilizer %}
+<h3>Fertilizer Recommendation</h3>
+<p><strong>Name:</strong> {{ fertilizer.name }}</p>
+<p><strong>Usage:</strong> {{ fertilizer.usage }}</p>
+{% endif %}
+
+{% if reasons %}
+<h3>Reasons</h3>
+<ul>
+{% for reason in reasons %}
+<li>{{ reason }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endif %}
+</div>
+</body>
+</html>
