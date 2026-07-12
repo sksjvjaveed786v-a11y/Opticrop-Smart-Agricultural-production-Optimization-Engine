@@ -30,8 +30,13 @@ def predict():
 
     confidence = max(model.predict_proba(input_data)[0]) * 100
     confidence = round(confidence, 2)
+
+    # Use lowercase for dictionary lookup
     info = crop_details.get(prediction.lower(), {})
     fertilizer = fertilizer_details.get(prediction.lower(), {})
+
+    # Display the crop name nicely
+    prediction = prediction.title()
     
     reasons = []
 
